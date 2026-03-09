@@ -178,7 +178,7 @@ public class PlayerSiegeEventListener implements Listener {
 
             Player player = (Player) event.getEntity().getShooter();
 
-            if (!isPlayerSubjectToWarZone(player))
+            if (!isPlayerSubjectToWar(player))
                 return;
 
             var customCooldowns = plugin.getConfig().getConfigurationSection("warzone-pvp.cooldowns.projectiles");
@@ -261,6 +261,11 @@ public class PlayerSiegeEventListener implements Listener {
                     messageProvider.get("messages.prefix"));
         }
     }
+
+    private boolean isPlayerSubjectToWar(Player player) {
+        return plugin.getWarManager().isPlayerInActiveWar(player.getUniqueId());
+    }
+
 
     private boolean isPlayerSubjectToWarZone(Player player) {
         if (!plugin.getWarManager().isPlayerInActiveWar(player.getUniqueId()))
