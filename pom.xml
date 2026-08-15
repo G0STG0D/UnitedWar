@@ -6,12 +6,11 @@
 
   <groupId>org.unitedlands.war</groupId>
   <artifactId>UnitedWar</artifactId>
-  <version>1.2.2</version>
+  <version>1.2.3</version>
   <name>UnitedWar</name>
 
   <properties>
-    <java.version>21</java.version>
-    <paper.api.version>1.21.5-R0.1-SNAPSHOT</paper.api.version>
+    <java.version>25</java.version>
   </properties>
 
   <repositories>
@@ -56,7 +55,7 @@
     <dependency>
       <groupId>io.papermc.paper</groupId>
       <artifactId>paper-api</artifactId>
-      <version>1.21.11-R0.1-SNAPSHOT</version>
+      <version>[26.2.build,)</version>
       <scope>provided</scope>
     </dependency>
 
@@ -70,7 +69,7 @@
     <dependency>
       <groupId>com.palmergames.bukkit.towny</groupId>
       <artifactId>towny</artifactId>
-      <version>0.102.0.0</version>
+      <version>0.103.0.0</version>
       <scope>provided</scope>
     </dependency>
 
@@ -132,7 +131,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.10.1</version>
+        <version>3.15.0</version>
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
@@ -141,7 +140,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.6.2</version>
         <executions>
           <execution>
             <phase>package</phase>
